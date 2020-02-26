@@ -10,7 +10,7 @@ const schema = {
             "maxLength": 255
         },
         "priority": {
-            "type": "number",
+            "type": ["number", "null"],
             "maximum": 100,
             "minimum": 0,
         }

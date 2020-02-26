@@ -8,6 +8,15 @@ Content-Type: application/json
   "priority": 100
 }
 
+### create with no property
+POST http://localhost:7000/api/v1/tasks
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Task from post, no property"
+}
+
 ### get all
 GET http://localhost:7000/api/v1/tasks
 Accept: application/json

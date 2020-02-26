@@ -2,16 +2,24 @@ import {BaseEntity, Check, Column, Entity, PrimaryGeneratedColumn} from 'typeorm
 
 
 @Entity({name: 'tasks'})
-@Check(`"priority" <= 100`)
 class Task extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     public id?: number;
 
-    @Column()
+    @Column({
+        type: 'varchar',
+        nullable:false,
+        length: 255
+    })
     public name?: string;
 
-    @Column()
+    @Column({
+        type: "int",
+        nullable:true,
+        default: 0
+    })
+    @Check(`"priority" <= 100`)
     public priority?: number;
 
 }

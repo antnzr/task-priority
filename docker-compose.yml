@@ -9,11 +9,6 @@ services:
     volumes:
       - ./pg_data:/var/lib/postgresql/data/pgdata
     env_file: .env
-    environment:
-      - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - POSTGRES_DATABASE=$POSTGRES_DATABASE
-      - PGDATA=/var/lib/postgresql/data/pgdata
   app:
     build:
       context: .
@@ -22,12 +17,6 @@ services:
     ports:
       - 7000:7000
     env_file: .env
-    environment:
-      - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - POSTGRES_DATABASE=$POSTGRES_DATABASE
-      - PGDATA=/var/lib/postgresql/data/pgdata
-      - POSTGRES_HOST=db
     restart: always
     depends_on:
       - db

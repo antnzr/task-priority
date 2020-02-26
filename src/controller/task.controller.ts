@@ -29,7 +29,7 @@ class TaskController {
                         .json({message: `The request body isn't valid: ${JSON.stringify(requestTask)}`});
                 }
 
-                const task = new Task();
+                const task: Task = new Task();
                 task.name = requestTask.name;
                 task.priority = requestTask.priority;
 
