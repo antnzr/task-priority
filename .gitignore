@@ -5,6 +5,7 @@ target
 *.iws
 log
 pg_data
+dist
 
 # Logs
 logs
